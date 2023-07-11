@@ -1,7 +1,10 @@
 <?php require APPROOT . '/views/inc/header.php'; ?>
 
-    <h1><?php /** @var TYPE_NAME $data */
-        echo $data['title'] ?></h1>
-<p>This is the TraversyMVC PHP framework.
-    Please refer to the docs on how to use it.</p>
+<h1><?php echo $data['title'] ?></h1>
+<ul>
+    <?php foreach($data['posts'] as $post) : ?>
+        <li><?php echo $post->name; ?></li>
+    <?php endforeach; ?>
+</ul>
+
 <?php require APPROOT . '/views/inc/footer.php'; ?>

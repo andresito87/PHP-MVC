@@ -4,12 +4,14 @@
     {
         public function __construct()
         {
-
+            $this->postModel = $this->model('Post');
         }
 
         public function index()
         {
-            $data = ['title' => 'TraversyMVC'];
+            $posts= $this->postModel->getPosts();
+            $data = ['title' => 'Welcome',
+                     'posts' => $posts];
 
             $this->view('pages/index', $data);
         }

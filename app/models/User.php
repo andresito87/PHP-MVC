@@ -50,4 +50,14 @@
             //Check if email is already registered
             return $this->db->rowCount() > 0;
         }
+
+        //Get user by id
+        public function getUserById($id)
+        {
+            $this->db->query('SELECT * FROM users WHERE id = :id');
+            //Bind value
+            $this->db->bind(':id', $id);
+            //Get row
+            return $this->db->single();
+        }
     }
